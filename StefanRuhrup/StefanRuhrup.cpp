@@ -1,3 +1,4 @@
+//Source: cf. [H. Karl, Leistungsbewertung und Simulation, uni Paderborn, 2007
 #include <queue>
 #include <random>
 #include <iostream>
