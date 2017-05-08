@@ -32,7 +32,7 @@ class Generator {
 
 	double rand_poisson(double lambda) {
 		std::uniform_real_distribution<double> distribution(0.0, 1.0);
-		double L = exp(-lambda);
+	/*	double L = exp(-lambda);
 		int k = 0;
 		double r=0;
 		double p = 1.0000;
@@ -43,12 +43,13 @@ class Generator {
 			p = p * r;
 			std::cout << "k " << k << " p " << p << " r " << r << " L " << L<< std::endl;
 		}
-		return k - 1;
+		return k - 1; */
+		return (log(distribution(generator))/(-lambda));
 	}
 
 	std::default_random_engine generator;
 };
-const double T_MAX = 0.5;
+const double T_MAX = 50;
 double mean_arrival=0.5;
 double mean_processing=0.3;
 std::queue<Task> queue;
@@ -56,8 +57,8 @@ State server_state = State::IDLE;
 double sim_time = 0.0;
 double next_departure = HUGE_VAL; // ← set to infinity
 
-size_t cumulated_queue_length;
-double busy_time_total;
+size_t cumulated_queue_length=0;
+double busy_time_total=0;
 double last_event_time = 0.0;
 void update_statistics() {
 	double time_since_last_event = sim_time - last_event_time;
