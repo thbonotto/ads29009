@@ -22,14 +22,12 @@ network WirelessB extends WirelessA
 {
     submodules:
         hostR1: <hostType> like INetworkNode {
-            @display("p=250,300");
+            @display("p=250,350");
         }
         hostR2: <hostType> like INetworkNode {
-            @display("p=150,450");
+            @display("p=150,350");
         }
         hostR3: <hostType> like INetworkNode {
-            @display("p=350,450");
+            @display("p=350,350");
         }
 }
-
-//##### (marker for doxygen)
