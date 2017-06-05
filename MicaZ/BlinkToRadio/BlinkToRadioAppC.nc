@@ -32,7 +32,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
-
 /**
  * Application file for the BlinkToRadio application.  A counter is
  * incremented and a radio message is sent whenever a timer fires.
